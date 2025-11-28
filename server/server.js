@@ -14,6 +14,10 @@ app.use(express.json())
 app.use(cors())
 await connectDB()
 
+app.use('/',(req,res)=>{
+    res.send("backend is working");
+})
+
 app.use('/api/user', userRouter)
 app.use('/api/image', imageRouter)
 app.get('/', (req, res)=> res.send("API Working"))
